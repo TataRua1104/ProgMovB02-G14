@@ -1,0 +1,54 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#4CAF50"
+    tools:context=".MainActivity">
+
+    <!-- LOGO -->
+    <ImageView
+        android:id="@+id/imagenSuperior"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/icono"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Imagen superior" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/reusalo"
+        android:contentDescription="Logo"
+        android:layout_marginBottom="32dp" />
+
+    <!-- CAMPO DE USUARIO -->
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo o usuario"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="16dp" />
+
+    <!-- CAMPO DE CONTRASEÑA -->
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_marginBottom="24dp" />
+
+    <!-- BOTÓN DE INICIAR SESIÓN -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesión" />
+
+</LinearLayout>
