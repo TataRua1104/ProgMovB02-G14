@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#4CAF50"
+    android:background="#90CAF9"
     tools:context=".MainActivity">
 
     <!-- LOGO -->
