@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Sesion"
+rootProject.name = "Reusalo"
 include(":app")
