@@ -1,12 +1,11 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#90CAF9"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#90CAF9"
     tools:context=".MainActivity">
 
     <!-- LOGO -->
@@ -14,35 +13,35 @@
         android:id="@+id/imagenSuperior"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/icono"
         android:layout_marginBottom="16dp"
-        android:contentDescription="Imagen superior" />
+        android:contentDescription="Imagen superior"
+        android:src="@drawable/icono" />
 
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/reusalo"
+        android:layout_marginBottom="32dp"
         android:contentDescription="Logo"
-        android:layout_marginBottom="32dp" />
+        android:src="@drawable/reusalo" />
 
     <!-- CAMPO DE USUARIO -->
     <EditText
         android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="Correo o usuario"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp" />
+        android:inputType="textEmailAddress" />
 
     <!-- CAMPO DE CONTRASEÑA -->
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:layout_marginBottom="24dp" />
+        android:inputType="textPassword" />
 
     <!-- BOTÓN DE INICIAR SESIÓN -->
     <Button
