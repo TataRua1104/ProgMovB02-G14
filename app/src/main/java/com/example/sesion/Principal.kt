@@ -2,35 +2,106 @@ package com.example.sesion
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.view.MenuItem
+import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.navigation.NavigationView
 
-class Principal : AppCompatActivity() {
+class Principal : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navigationView: NavigationView
+    private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var menuIcon: ImageView
+
+    private val categorias = listOf(
+        Categoria(
+            nombre = "Zapatos",
+            productos = listOf(
+                Producto(
+                    id = 1,
+                    nombre = "Zapato Único",
+                    precio = 60.000,
+                    imagenResId = R.drawable.zapatos
+                ),
+                Producto(
+                    id = 2,
+                    nombre = "Zapato Dama",
+                    precio = 30.000,
+                    imagenResId = R.drawable.zapa
+                )
+            )
+        )
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
-    }
-}
 
-class ProductoActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_principal) // Asegúrate de que este es el layout correcto
+        drawerLayout = findViewById(R.id.drawerLayout)
+        navigationView = findViewById(R.id.navigationView)
+        menuIcon = findViewById(R.id.menuIcon)
 
-        // Encuentra el LinearLayout correspondiente al producto
-        val item1 = findViewById<LinearLayout>(R.id.prod1)
+        toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
-        // Configura el listener para el click
-        item1.setOnClickListener {
-            // Muestra un Toast para confirmar que se hizo el clic
-            Toast.makeText(this, "Click detectado en item1", Toast.LENGTH_SHORT).show()
+        navigationView.setNavigationItemSelectedListener(this)
 
-            // Inicia la actividad VerProducto
-            val intent = Intent(this, VerProducto::class.java)
+        menuIcon.setOnClickListener {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START)
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START)
+            }
+        }
+
+        val categoriasRecyclerView = findViewById<RecyclerView>(R.id.categoriasRecyclerView)
+        categoriasRecyclerView.layoutManager = LinearLayoutManager(this)
+        val adapter = CategoriaAdapter(categorias) { categoria ->
+            // Aquí manejas el clic en la categoría (puedes dejarlo como está o simplificarlo)
+            Toast.makeText(this, "Clic en la categoría: ${categoria.nombre}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ListaProductosActivity::class.java)
+            intent.putExtra("categoriaNombre", categoria.nombre)
+            intent.putExtra("productos", ArrayList(categoria.productos))
             startActivity(intent)
         }
+        categoriasRecyclerView.adapter = adapter
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_home -> {
+                Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_gallery -> {
+                Toast.makeText(this, "Galería", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_slideshow -> {
+                Toast.makeText(this, "Presentación", Toast.LENGTH_SHORT).show()
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 }
-
-

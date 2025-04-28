@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:background="#47FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:cardCornerRadius="8dp">
+
+        <ImageView
+            android:id="@+id/imagenProductoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Imagen del producto"
+            android:scaleType="centerCrop"
+            android:src="@drawable/zapatos" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/nombreProductoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Zapatos Vintage"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/precioProductoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$50.000"
+        android:textColor="#FFB300"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
