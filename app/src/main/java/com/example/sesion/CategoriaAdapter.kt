@@ -1,5 +1,6 @@
 package com.example.sesion
 
+import androidx.recyclerview.widget.GridLayoutManager
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +14,8 @@ class CategoriaAdapter(private val categorias: List<Categoria>, private val onCa
 
     class CategoriaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nombreTextView: TextView = itemView.findViewById(R.id.nombreCategoriaTextView)
-        val productosRecyclerViewHorizontal: RecyclerView = itemView.findViewById(R.id.productosRecyclerViewHorizontal)
+        val productosRecyclerView: RecyclerView = itemView.findViewById(R.id.productosRecyclerView)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriaViewHolder {
@@ -30,10 +32,12 @@ class CategoriaAdapter(private val categorias: List<Categoria>, private val onCa
         }
 
         // Configurar el RecyclerView horizontal de productos
-        holder.productosRecyclerViewHorizontal.layoutManager =
-            LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
+        holder.productosRecyclerView.layoutManager =
+            GridLayoutManager(holder.itemView.context, 2)
+
         val adapter = ProductoHorizontalAdapter(categoria.productos)
-        holder.productosRecyclerViewHorizontal.adapter = adapter
+        holder.productosRecyclerView.adapter = adapter
+
     }
 
     override fun getItemCount() = categorias.size

@@ -30,7 +30,7 @@ class Principal : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                     nombre = "Zapato Único",
                     precio = 60.000,
                     imagenResId = R.drawable.zapatos,
-                    videoUrl = "https://www.youtube.com/watch?v=XXXXXXXXXXX", // Reemplaza con la URL real
+                    videoUrl = "https://www.youtube.com/watch?v=axFBq0Ir3KA", // Reemplaza con la URL real
                     whatsappUrl = "https://wa.me/52155XXXXXXXXX" // Reemplaza con el número real con código de país
                 ),
                 Producto(
@@ -40,6 +40,31 @@ class Principal : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                     imagenResId = R.drawable.zapa,
                     videoUrl = "https://www.youtube.com/watch?v=YYYYYYYYYYY", // Reemplaza con la URL real
                     whatsappUrl = "https://wa.me/52155YYYYYYYYY" // Reemplaza con el número real con código de país
+                ),
+                Producto(
+                    id = 3,
+                    nombre = "Tenis Rosa",
+                    precio = 40.000,
+                    imagenResId = R.drawable.tenis_rosa
+                ),
+                Producto(
+                    id = 4,
+                    nombre = "Zapato Vel",
+                    precio = 40.000,
+                    imagenResId = R.drawable.tenis_vel
+                ),
+                Producto(
+                    id = 5,
+                    nombre = "Tenis Rojo",
+                    precio = 55.000,
+                    imagenResId = R.drawable.rojo
+                ),
+                Producto(
+                    id = 6,
+                    nombre = "Tenis Ame",
+                    precio = 66.000,
+                    imagenResId = R.drawable.ame
+
                 )
             )
         )
