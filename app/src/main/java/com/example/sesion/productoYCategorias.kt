@@ -7,8 +7,9 @@ data class Producto(
     val id: Int,
     val nombre: String,
     val precio: Double,
-    @DrawableRes val imagenResId: Int // ID del recurso de la imagen (en drawable)
-    // Puedes añadir más propiedades como descripción, etc.
+    val imagenResId: Int,
+    val videoUrl: String? = null,
+    val whatsappUrl: String? = null
 ) : Serializable
 
 data class Categoria(

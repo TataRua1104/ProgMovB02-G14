@@ -29,13 +29,17 @@ class Principal : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLi
                     id = 1,
                     nombre = "Zapato Único",
                     precio = 60.000,
-                    imagenResId = R.drawable.zapatos
+                    imagenResId = R.drawable.zapatos,
+                    videoUrl = "https://www.youtube.com/watch?v=XXXXXXXXXXX", // Reemplaza con la URL real
+                    whatsappUrl = "https://wa.me/52155XXXXXXXXX" // Reemplaza con el número real con código de país
                 ),
                 Producto(
                     id = 2,
                     nombre = "Zapato Dama",
                     precio = 30.000,
-                    imagenResId = R.drawable.zapa
+                    imagenResId = R.drawable.zapa,
+                    videoUrl = "https://www.youtube.com/watch?v=YYYYYYYYYYY", // Reemplaza con la URL real
+                    whatsappUrl = "https://wa.me/52155YYYYYYYYY" // Reemplaza con el número real con código de país
                 )
             )
         )
